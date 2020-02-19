@@ -1,14 +1,46 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<!DOCTYPE html>
 
-<header style="background-color:cyan; text-align:right;">
-    <h1>LoanEnquiry</h1>
-</header>
-<nav>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        header {
+            height: 50px;
+            width: 100%;
+            background-color: yellowgreen;
+        }
+
+        nav {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: wheat;
+        }
+
+        footer {
+            background-color: yellowgreen;
+            width: 100%;
+            height: 30px;
+            float: right;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header style="text-align:center">
+        <h1>LoanEnquiry</h1>
+    </header>
+    <nav>
+        @Html.ActionLink("Login", "Login")<br /><br />
+        @Html.ActionLink("Registration", "Registration")
+
+    </nav>
     <div>
-        @Html.ActionLink("Sign In", "SignIn", "hhg")
-
+        @RenderBody()
     </div>
-</nav>
-
+    <footer style="text-align:center;">
+        <div>All rights reserved</div>
+    </footer>
+</body>
+</html>
