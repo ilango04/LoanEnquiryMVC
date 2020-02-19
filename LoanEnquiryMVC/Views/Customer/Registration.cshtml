@@ -1,0 +1,76 @@
+﻿@model LoanEnquiry_EL.Customer
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/Index.cshtml";
+}
+
+<h2>Registration</h2>
+@using (Html.BeginForm("SignUp", "MovieTicketBooking", FormMethod.Post))
+{
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.Label("Name")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Type")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.type)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Company")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.company)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Password")
+            </td>
+            <td>
+                @Html.PasswordFor(Model => Model.password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Confirm Password")
+            </td>
+            <td>
+                @Html.PasswordFor(Model=>Model.confirmPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Gender")
+            </td>
+            <td>
+                @Html.RadioButtonFor(Model => Model.gender, "male")Male
+                @Html.RadioButtonFor(Model => Model.gender, "female") Female
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("User Role")
+            </td>
+            <td>
+                @Html.EnumDropDownListFor(model => model.userRole, "select a role")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" />
+            </td>
+        </tr>
+    </table>
+}
+
