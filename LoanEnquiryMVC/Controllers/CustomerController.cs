@@ -18,10 +18,12 @@ namespace LoanEnquiryMVC.Controllers
         public ActionResult Registration(Customer customer)
         {
             CustomerRepository.Registration(customer);
+            ViewBag.Message = "Registered successfull";
             return View();
         }
         public ActionResult Login()
         {
+            ViewBag.Message = "Login successfull";
             return View();
         }
     }

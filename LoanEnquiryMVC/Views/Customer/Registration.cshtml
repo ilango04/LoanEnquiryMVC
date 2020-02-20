@@ -1,12 +1,11 @@
 ﻿@model LoanEnquiry_EL.Customer
-
 @{
     ViewBag.Title = "Registration";
-    Layout = "~/Views/Shared/Index.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Registration</h2>
-@using (Html.BeginForm("SignUp", "MovieTicketBooking", FormMethod.Post))
+@using (Html.BeginForm("Registration", "Customer", FormMethod.Post))
 {
     <table cellpadding="10">
         <tr>
@@ -46,7 +45,7 @@
                 @Html.Label("Confirm Password")
             </td>
             <td>
-                @Html.PasswordFor(Model=>Model.confirmPassword)
+                @Html.PasswordFor(Model => Model.confirmPassword)
             </td>
         </tr>
         <tr>
@@ -72,5 +71,3 @@
             </td>
         </tr>
     </table>
-}
-
