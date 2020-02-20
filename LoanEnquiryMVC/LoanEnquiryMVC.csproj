@@ -105,7 +105,6 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +131,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Customer\Registration.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
