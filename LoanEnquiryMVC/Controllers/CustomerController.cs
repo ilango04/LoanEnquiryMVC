@@ -17,13 +17,21 @@ namespace LoanEnquiryMVC.Controllers
         }
         public ActionResult Registration(Customer customer)
         {
-            CustomerRepository.Registration(customer);
-            ViewBag.Message = "Registered successfull";
+            if (!ModelState.IsValid)
+            {
+                CustomerRepository.Registration(customer);
+                ViewBag.Message = "Registered successfull";
+                return View();
+            }
             return View();
         }
         public ActionResult Login()
         {
-            ViewBag.Message = "Login successfull";
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Message = "Login successfull";
+                return View();
+            }
             return View();
         }
     }
