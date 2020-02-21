@@ -1,8 +1,33 @@
-﻿
+﻿@model IEnumerable<LoanEnquiry_EL.Customer>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Master.cshtml";
 }
 
-<h2>Index</h2>
+<marquee> Paisa Bazzar</marquee>
+<table class="tablestyle" border="1">
+    <tr>
+        <td>CustomerName</td>
+        <td>EmploymentType</td>
+        <td>Company</td>
+        <td>Gender</td>
+        <td>Role</td>
+        <td>MobileNumber</td>
+        <td>Email</td>
+        <td>Password</td>
+    </tr>
+    @foreach (LoanEnquiry_EL.Customer value in (IEnumerable<LoanEnquiry_EL.Customer>)@Model)
+    {
+        <tr>
+            <td>@value.name</td>
+            <td>@value.type</td>
+            <td>@value.company</td>
+            <td>@value.gender</td>
+            <td>@value.userRole</td>
+            <td>@value.mobileNumber</td>
+            <td>@value.mailId</td>
+            <td>@value.password</td>
+        </tr>
+    }
+  </table>
 

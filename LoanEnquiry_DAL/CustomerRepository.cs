@@ -10,7 +10,12 @@ namespace LoanEnquiry_DAL
     public class CustomerRepository
     {
         public static List<Customer> customerDetails = new List<Customer>();
-        public static void Registration(Customer customer)
+        Customer customer = new Customer();
+        public IEnumerable<Customer> ToRegister()
+        {
+           return customerDetails;
+        }
+        public void Add(Customer customer)
         {
             customerDetails.Add(customer);
         }

@@ -13,16 +13,21 @@ namespace LoanEnquiryMVC.Controllers
         // GET: Customer
         public ActionResult Index()
         {
+            IEnumerable<Customer> customers = new CustomerRepository().ToRegister();
+            return View(customers);
+        }
+        public ActionResult Registration()
+        {
             return View();
         }
+        [HttpPost]
         public ActionResult Registration(Customer customer)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                CustomerRepository.Registration(customer);
-                ViewBag.Message = "Registered successfull";
-                return View();
+                return RedirectToAction("Login");
             }
+            new CustomerRepository().Add(customer);
             return View();
         }
         public ActionResult Login()
